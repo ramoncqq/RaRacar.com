@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag(@brand.image , :size => '100') %>
+</p>
+
+<p>
+  <strong>Description:</strong> 
+  <%= @brand.description %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @brand.phone %>
+</p>
+
+<% if !current_user.nil?%>
+<%= link_to 'Edit', edit_brand_path(@brand) %> |
+<%end%>
+<%= link_to 'Back', brands_path %>

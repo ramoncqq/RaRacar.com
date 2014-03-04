@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RUBY</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+
+
+     <div class="Menu_UpHtml">
+        <div id="Menu_UpHtml1">
+           <ul> 
+            <div class="nose"> 
+               <li> <%= link_to 'About' , somos_path %>              </li>
+            </div>
+            <div class="nose"> 
+               <li> <%= link_to 'See Cars' , cars_path  %>            </li>
+            </div>
+            <div class="nose">
+            <li> <%= link_to 'See Brands' , brands_path %>        </li>
+            </div>
+            <div class="pepito"> 
+                  <li>
+                    <% if user_signed_in? %>
+                       Signed in as <%= current_user.email %>. Not you?
+                       <%= link_to "Sign out", destroy_user_session_path , :method => :delete %>
+                     <% else %>
+                        <%= link_to "Sign up", new_user_registration_path %> or
+                        <%= link_to "Sign in", new_user_session_path %>
+                      <% end %>
+                  </li>
+            </div>
+          </ul>
+       </div>
+     </div>
+
+    
+     
+     <div class="body">
+         <%= yield %>
+     </div>
+
+<div id="pie">
+   
+     <div id="pie1">
+       
+           <ul>
+              <li class ="piederechos">  CONDICIONES DE USO  </li>
+              <li class ="piederechos">  PROTECCION DE DATOS </li>
+              <li class ="piederechos">  DERECHOS DE AUTOR   </li>
+              <li class ="piederechos">  CONTACTO            </li>
+          </ul> 
+     </div>
+
+    <div id="imagenabajo"> 
+       <%= link_to image_tag('logotipo.jpeg' , :size =>'150') ,cars_path %>  
+    </div>
+
+<div id="parteabajo">
+
+      <div id="pie_abajo">       
+         <ul>  
+             
+           <li class ="pieinfo"> NOMBRE:     RARACAR           </li>
+           <li class ="pieinfo"> DIRECCION:  C/ALCALA 25       </li>
+           <li class ="pieinfo"> CP:         28823             </li>          
+           <li class ="pieinfo"> TELEFONO:   645123153       </li>   
+
+         </ul>
+     </div>
+
+     <div class="hola">
+       <ul>
+          <li class="boton"> <%= link_to  image_tag('facebook.png',:size => '50'),"http://www.facebook.com",
+                :target => '_blank'%>         </li>
+           <li class="boton"> <%= link_to  image_tag('twitter.png',:size =>  '50'),"http://www.twitter.com",
+                :target => '_blank'%>         </li>
+          <li  class="boton" > <%= link_to  image_tag('youtube.jpeg' ,:size => '50'),"http://www.youtube.com", 
+                :target => '_blank'%>         </li>
+          <li  class="boton"> <%= link_to image_tag('instagram.png',:size => '50'),"http://www.instagram.com",
+                :target => '_blank'%>         </li> 
+       </ul>
+      </div>
+   </div>
+</div>
+
+
+</body>
+</html>

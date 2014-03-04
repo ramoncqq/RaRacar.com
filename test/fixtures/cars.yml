@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  image: MyText
+  Description: MyText
+  km: 1
+  brand_id: 1
+
+two:
+  image: MyText
+  Description: MyText
+  km: 1
+  brand_id: 1
